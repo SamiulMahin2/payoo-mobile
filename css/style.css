@@ -1,0 +1,18 @@
+/* fonts links */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.outfit-font {
+  font-family: "Outfit", sans-serif;
+}
+
+/* single card(home.html) */
+.single-card{
+  transition: 0.33s linear;  
+}
+.single-card:hover{
+  border: 1px solid #0874F2;
+  color: blue;
+  background-color: rgba(8, 116, 242, 0.05);
+  
+}
+/* single card(home.html) */

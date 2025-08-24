@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font links -->
+
+    <!-- icon links -->
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+
+    <!-- css links -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/media.css">
+</head>
+
+<body class="bg-[#F4F5F7] min-h-[100vh] pt-[50px]">
+
+    <!-- header start -->
+    <header class="max-w-md mx-auto bg-white rounded-b-[24px] mb-[30px]">
+
+        <!-- nav -->
+        <nav class="flex justify-between items-center border-b-[1px] border-b-gray-300 px-[24px] py-[10px]">
+            <div class="logo flex items-center">
+                <div class="logo-img">
+                    <img src="../assets/Group.png" alt="">
+                </div>
+                <div class="logo-text">
+                    <h1 class="outfit-font text-[18px] font-[800]">$<span id="total-balance">45000</span></h1>
+                    <p class="outfit-font text-[14px] font-[400] text-[#08080880]">Available Balance</p>
+                </div>
+            </div>
+            <div class="logout-button">
+                <button
+                    class="outfit-font text-[14px] font-[400] text-[#08080880] cursor-pointer border-[1px] border-[#0808081a] px-[12px] py-[9px] rounded-[8px]"
+                    id="logout-button"><i class="fa-solid fa-arrow-right-from-bracket rotate-[180deg] mr-[8px]"></i>Log
+                    Out</button>
+            </div>
+        </nav>
+        <!-- nav -->
+
+        <!-- banner -->
+        <section class="banner p-[24px]">
+            <div class="banner-top my-[24px]">
+                <div class="banner-heading">
+                    <h1 class="outfit-font text-[24px] font-[700]">🔥 Welcome to Payooo!</h1>
+                </div>
+                <div class="banner-description">
+                    <p class="outfit-font text-[1rem] font-[400] text-[#08080880] leading-[26px]">Enjoy easy and
+                        convenient financial services with us. Cashout charge is low and </p>
+                </div>
+            </div>
+            <div class="banner-bottom">
+                <div class="banner-card-container grid grid-cols-3 gap-[16px]">
+
+                    <!-- add money  -->
+                    <div class="single-card border-[1px] border-[#0808081a] rounded-[12px] py-[20px] px-[10px] cursor-pointer" id="add-money-card">
+                        <div class="card-image flex justify-center items-center">
+                            <img src="../assets/wallet1.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <p class="outfit-font text-[14px] font-[400] text-[#08080880] opacity-70 text-center">Add
+                                Money</p>
+                        </div>
+                    </div>
+                    <!-- add money  -->
+
+                    <!-- cashout  -->
+                    <div class="single-card border-[1px] border-[#0808081a] rounded-[12px] py-[20px] px-[10px] cursor-pointer" id="cashout-card">
+                        <div class="card-image flex justify-center items-center">
+                            <img src="../assets/send1.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <p class="outfit-font text-[14px] font-[400] text-[#08080880] opacity-70 text-center">
+                                Cashout</p>
+                        </div>
+                    </div>
+                    <!-- cashout  -->
+
+                    <!-- transfer money  -->
+                    <div class="single-card border-[1px] border-[#0808081a] rounded-[12px] py-[20px] px-[10px] cursor-pointer" id="transfer-money-card">
+                        <div class="card-image flex justify-center items-center">
+                            <img src="../assets/money1.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <p class="outfit-font text-[14px] font-[400] text-[#08080880] opacity-70 text-center">
+                                Transfer Money</p>
+                        </div>
+                    </div>
+                    <!-- transfer money  -->
+
+                    <!-- get bonus  -->
+                    <div class="single-card border-[1px] border-[#0808081a] rounded-[12px] py-[20px] px-[10px] cursor-pointer" id="get-bonus-card">
+                        <div class="card-image flex justify-center items-center">
+                            <img src="../assets/bonus1.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <p class="outfit-font text-[14px] font-[400] text-[#08080880] opacity-70 text-center">Get
+                                Bonus</p>
+                        </div>
+                    </div>
+                    <!-- get bonus  -->
+
+                    <!-- pay bill  -->
+                    <div class="single-card border-[1px] border-[#0808081a] rounded-[12px] py-[20px] px-[10px] cursor-pointer" id="pay-bill-card">
+                        <div class="card-image flex justify-center items-center">
+                            <img src="../assets/purse1.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <p class="outfit-font text-[14px] font-[400] text-[#08080880] opacity-70 text-center">Pay
+                                Bill</p>
+                        </div>
+                    </div>
+                    <!-- pay bill  -->
+
+                    <!-- transactions  -->
+                    <div class="single-card border-[1px] border-[#0808081a] rounded-[12px] py-[20px] px-[10px] cursor-pointer" id="transactions-card">
+                        <div class="card-image flex justify-center items-center">
+                            <img src="../assets/transaction1.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <p class="outfit-font text-[14px] font-[400] text-[#08080880] opacity-70 text-center">
+                                Transactions</p>
+                        </div>
+                    </div>
+                    <!-- transactions  -->
+
+                </div>
+            </div>
+        </section>
+        <!-- banner -->
+
+    </header>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main class="max-w-md mx-auto pb-[50px]">
+
+        <!-- add money form -->
+        <section class="add-money-form hidden common-form" id="add-money-section">
+
+            <div class="add-money-heading">
+                <h1 class="outfit-font text-[18px] font-[600] text-[#080808e6] mb-4">Add Money</h1>
+            </div>
+
+            <div class="add-money-form-container bg-white rounded-3xl mx-[15px]">
+
+                <form class="max-w-[400px] mx-auto p-[24px] bg-white rounded-3xl">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Select A Bank</label>
+
+                    <select class="select text-[1rem] text-[#080808] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" required>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]" disabled selected>Select Bank</option>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]">Brac Bank</option>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]">Swiss Bank</option>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]">Anwar Bank</option>
+                    </select>
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Bank Account Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter 11 digit account number" id="add-money-account-number">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Amount to Add</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Add Amount to withdraw" id="add-money-amount">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Pin Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter 4 digit pin number" id="add-money-pin">
+
+                    <button class="bg-[#0874F2] rounded-4xl text-white font-[600] text-[1.25rem] w-full py-[8px] cursor-pointer" id="add-money-button">Add Money</button>
+
+                </form>
+
+            </div>
+        </section>
+        <!-- add money form -->
+
+        <!-- cashout form -->
+        <section class="cashout-form hidden common-form" id="cashout-section">
+
+            <div class="cashout-heading">
+                <h1 class="outfit-font text-[18px] font-[600] text-[#080808e6] mb-4">Cash Out</h1>
+            </div>
+
+            <div class="cashout-form-container bg-white rounded-3xl mx-[15px]">
+
+                <form class="max-w-[400px] mx-auto p-[24px] bg-white rounded-3xl">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Agent Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter 11 digit number" id="cashout-agent-number">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Amount</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter amount to withdraw" id="cashout-amount">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Pin Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter 4 digit pin number" id="cashout-pin">
+
+                    <button class="bg-[#0874F2] rounded-4xl text-white font-[600] text-[1.25rem] w-full py-[8px] cursor-pointer" id="cashout-button">Withdraw Money</button>
+
+                </form>
+
+            </div>
+        </section>
+        <!-- cashout form -->
+
+        <!-- transfer money form -->
+        <section class="transfer-money-form hidden common-form" id="transfer-money-section">
+
+            <div class="transfer-money-heading">
+                <h1 class="outfit-font text-[18px] font-[600] text-[#080808e6] mb-4">Transfer Money</h1>
+            </div>
+
+            <div class="transfer-money-form-container bg-white rounded-3xl mx-[15px]">
+
+                <form class="max-w-[400px] mx-auto p-[24px] bg-white rounded-3xl">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">User Account Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter 11 digit number" id="transfer-money-account-number">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Amount</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter amount to transfer" id="transfer-money-amount">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Pin Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter 4 digit pin number" id="transfer-money-pin">
+
+                    <button class="bg-[#0874F2] rounded-4xl text-white font-[600] text-[1.25rem] w-full py-[8px] cursor-pointer" id="transfer-money-button">Send Now</button>
+
+                </form>
+
+            </div>
+        </section>
+        <!-- transfer money form -->
+
+        <!-- get bonus form -->
+        <section class="get-bonus-form hidden common-form" id="get-bonus-section">
+
+            <div class="get-bonus-heading">
+                <h1 class="outfit-font text-[18px] font-[600] text-[#080808e6] mb-4">Get Bonus</h1>
+            </div>
+
+            <div class="get-bonus-form-container bg-white rounded-3xl mx-[15px]">
+
+                <form class="max-w-[400px] mx-auto p-[24px] bg-white rounded-3xl">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Enter Bonus Coupon</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter your coupon" id="get-bonus-coupon">
+
+                    <button class="bg-[#0874F2] rounded-4xl text-white font-[600] text-[1.25rem] w-full py-[8px] cursor-pointer" id="get-bonus-button">Get Bonus</button>
+
+                </form>
+
+            </div>
+        </section>
+        <!-- get bonus form -->
+
+        <!-- pay bill form -->
+        <section class="pay-bill-form hidden common-form" id="pay-bill-section">
+
+            <div class="pay-bill-heading">
+                <h1 class="outfit-font text-[18px] font-[600] text-[#080808e6] mb-4">Pay Bill</h1>
+            </div>
+
+            <div class="pay-bill-form-container bg-white rounded-3xl mx-[15px]">
+
+                <form class="max-w-[400px] mx-auto p-[24px] bg-white rounded-3xl">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Select To Pay</label>
+
+                    <select class="select text-[1rem] text-[#080808] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" required>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]" disabled selected>Select Bank</option>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]">Brac Bank</option>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]">Swiss Bank</option>
+                        <option class="outfit-font text-[1rem] text-[#080808] font-[300]">Anwar Bank</option>
+                    </select>
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Biller Account Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter account number" id="pay-bill-account-number">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Amount to Pay</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Add Amount to pay" id="pay-bill-amount">
+
+                    <label class="outfit-font text-[1rem] text-[#080808] font-[500]">Pin Number</label>
+
+                    <input class="outfit-font text-[1rem] text-[#080808] font-[300] rounded-4xl outline-none py-[10px] pl-[20px] w-full bg-[#F4F5F7] border-0 mt-[12px] mb-[16px]" type="text" placeholder="Enter 4 digit pin number" id="pay-bill-pin">
+
+                    <button class="bg-[#0874F2] rounded-4xl text-white font-[600] text-[1.25rem] w-full py-[8px] cursor-pointer" id="pay-bill-button">Pay Now</button>
+
+                </form>
+
+            </div>
+        </section>
+        <!-- pay bill form -->
+
+        <!-- transactions form -->
+        <section class="transactions-form hidden common-form" id="transactions-section">
+
+            <div class="transactions-heading">
+                <h1 class="outfit-font text-[18px] font-[600] text-[#080808e6] mb-4">Transaction History</h1>
+            </div>
+
+        </section>
+        <!-- transactions form -->
+
+    </main>
+    <!-- main end -->
+
+    <!-- js links -->
+    <script src="../js/home.js"></script>
+</body>
+
+</html>
