@@ -1,5 +1,7 @@
 /* common js start */
 
+let transactionsData = [];
+
 //collapse all forms sections
 function getFormsByClass(formsClassName){
     let forms = document.getElementsByClassName(formsClassName);
@@ -8,53 +10,17 @@ function getFormsByClass(formsClassName){
     }
 }
 
+//show the specific form
+function showSpecificForm(id){
+    document.getElementById(id).style.display = "block";
+}
+
 //collapse all values of input filed after operation
 function collapseValue(id){
     document.getElementById(id).value = "";
 }
 
 /* common js end */
-
-// logout button configuration
-document.getElementById("logout-button").addEventListener("click", function(){
-    window.location.href = "../index.html";
-})
-
-//add money card and form configure
-document.getElementById("add-money-card").addEventListener("click", function(){
-    getFormsByClass("common-form");
-    document.getElementById("add-money-section").style.display = "block";
-})
-
-//cashout card and form configure
-document.getElementById("cashout-card").addEventListener("click", function(){
-    getFormsByClass("common-form");
-    document.getElementById("cashout-section").style.display = "block";
-})
-
-//transfer money card and form configure
-document.getElementById("transfer-money-card").addEventListener("click", function(){
-    getFormsByClass("common-form");
-    document.getElementById("transfer-money-section").style.display = "block";
-})
-
-//get bonus card and form configuration 
-document.getElementById("get-bonus-card").addEventListener("click", function(){
-    getFormsByClass("common-form");
-    document.getElementById("get-bonus-section").style.display = "block";
-})
-
-//pay bill card and form configuration
-document.getElementById("pay-bill-card").addEventListener("click", function(){
-    getFormsByClass("common-form");
-    document.getElementById("pay-bill-section").style.display = "block";
-})
-
-//transactions card and form configuration
-document.getElementById("transactions-card").addEventListener("click", function(){
-    getFormsByClass("common-form");
-    document.getElementById("transactions-section").style.display = "block";
-})
 
 //add money form data validation
 document.getElementById("add-money-button").addEventListener("click", function(event){
@@ -79,6 +45,13 @@ document.getElementById("add-money-button").addEventListener("click", function(e
     }
 
     document.getElementById("total-balance").innerText = totalBalance;
+
+    let data = {
+        name: "Add Money",
+        time: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
 
     collapseValue("add-money-account-number");
     collapseValue("add-money-amount");
@@ -114,6 +87,14 @@ document.getElementById("cashout-button").addEventListener("click", function(eve
 
     document.getElementById("total-balance").innerText = totalBalance;
 
+    let data = {
+        name: "Cashout",
+        time: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
+    console.log(transactionsData);
+
     collapseValue("cashout-agent-number");
     collapseValue("cashout-amount");
     collapseValue("cashout-pin");
@@ -148,6 +129,13 @@ document.getElementById("transfer-money-button").addEventListener("click", funct
 
     document.getElementById("total-balance").innerText = totalBalance;
 
+    let data = {
+        name: "Transfer Money",
+        time: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
+
     collapseValue("transfer-money-account-number");
     collapseValue("transfer-money-amount");
     collapseValue("transfer-money-pin");
@@ -171,6 +159,13 @@ document.getElementById("get-bonus-button").addEventListener("click", function(e
     }
 
     document.getElementById("total-balance").innerText = totalBalance;
+
+    let data = {
+        name: "Get Bonus",
+        time: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
 
     collapseValue("get-bonus-coupon");
 })
@@ -204,7 +199,90 @@ document.getElementById("pay-bill-button").addEventListener("click", function(ev
 
     document.getElementById("total-balance").innerText = totalBalance;
 
+    let data = {
+        name: "Pay Bill",
+        time: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
+
     collapseValue("pay-bill-account-number");
     collapseValue("pay-bill-amount");
     collapseValue("pay-bill-pin");
+})
+
+//transactions card and form configuration
+document.getElementById("transactions-card").addEventListener("click", function(){
+
+    let transactionsCardContainer = document.getElementById("transactions-cards-container");
+    transactionsCardContainer.innerText = "";
+
+    for(let data of transactionsData){
+        let div = document.createElement("div");
+        div.innerHTML = `
+        <div class="transaction-single-card flex items-center justify-between bg-white py-[13px] px-[16px] rounded-2xl mb-[12px]">
+
+                    <div class="single-card-content flex items-center">
+                        <div class="single-card-image">
+                            <img src="../assets/wallet1.png" alt="">
+                        </div>
+                        <div class="single-card-text ml-[10px]">
+                            <div class="single-card-name">
+                                <h2 class="text-[16px] font-[600] text-[#080808b3]">${data.name}</h2>
+                            </div>
+                            <div class="single-card-time">
+                                <p class="text-[12px] font-[400] text-[#080808b3]">${data.time}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-single-card-icon">
+                        <i class="fa-solid fa-ellipsis-vertical cursor-pointer text-[20px] text-[#080808b3]"></i>
+                    </div>
+
+                </div>
+        `
+        transactionsCardContainer.appendChild(div);
+    } 
+})
+
+// logout button configuration
+document.getElementById("logout-button").addEventListener("click", function(){
+    window.location.href = "../index.html";
+})
+
+//add money card and form configure
+document.getElementById("add-money-card").addEventListener("click", function(){
+    getFormsByClass("common-form");
+    showSpecificForm("add-money-section");
+})
+
+//cashout card and form configure
+document.getElementById("cashout-card").addEventListener("click", function(){
+    getFormsByClass("common-form");
+    showSpecificForm("cashout-section");
+})
+
+//transfer money card and form configure
+document.getElementById("transfer-money-card").addEventListener("click", function(){
+    getFormsByClass("common-form");
+    showSpecificForm("transfer-money-section");
+})
+
+//get bonus card and form configuration 
+document.getElementById("get-bonus-card").addEventListener("click", function(){
+    getFormsByClass("common-form");
+    showSpecificForm("get-bonus-section");
+})
+
+//pay bill card and form configuration
+document.getElementById("pay-bill-card").addEventListener("click", function(){
+    getFormsByClass("common-form");
+    showSpecificForm("pay-bill-section");
+})
+
+//transactions card and form configuration
+document.getElementById("transactions-card").addEventListener("click", function(){
+    getFormsByClass("common-form");
+    showSpecificForm("transactions-section");
 })
