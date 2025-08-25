@@ -93,7 +93,6 @@ document.getElementById("cashout-button").addEventListener("click", function(eve
     }
 
     transactionsData.push(data);
-    console.log(transactionsData);
 
     collapseValue("cashout-agent-number");
     collapseValue("cashout-amount");
