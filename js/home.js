@@ -8,6 +8,11 @@ function getFormsByClass(formsClassName){
     }
 }
 
+//collapse all values of input filed after operation
+function collapseValue(id){
+    document.getElementById(id).value = "";
+}
+
 /* common js end */
 
 // logout button configuration
@@ -74,6 +79,10 @@ document.getElementById("add-money-button").addEventListener("click", function(e
     }
 
     document.getElementById("total-balance").innerText = totalBalance;
+
+    collapseValue("add-money-account-number");
+    collapseValue("add-money-amount");
+    collapseValue("add-money-pin");
 })
 
 //cashout form data validation
@@ -104,6 +113,10 @@ document.getElementById("cashout-button").addEventListener("click", function(eve
     }
 
     document.getElementById("total-balance").innerText = totalBalance;
+
+    collapseValue("cashout-agent-number");
+    collapseValue("cashout-amount");
+    collapseValue("cashout-pin");
 })
 
 //transfer money form data validation
@@ -134,6 +147,10 @@ document.getElementById("transfer-money-button").addEventListener("click", funct
     }
 
     document.getElementById("total-balance").innerText = totalBalance;
+
+    collapseValue("transfer-money-account-number");
+    collapseValue("transfer-money-amount");
+    collapseValue("transfer-money-pin");
 })
 
 //get bonus form data validation
@@ -154,6 +171,8 @@ document.getElementById("get-bonus-button").addEventListener("click", function(e
     }
 
     document.getElementById("total-balance").innerText = totalBalance;
+
+    collapseValue("get-bonus-coupon");
 })
 
 //pay bill form data validation
@@ -184,4 +203,8 @@ document.getElementById("pay-bill-button").addEventListener("click", function(ev
     }
 
     document.getElementById("total-balance").innerText = totalBalance;
+
+    collapseValue("pay-bill-account-number");
+    collapseValue("pay-bill-amount");
+    collapseValue("pay-bill-pin");
 })
